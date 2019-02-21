@@ -12,11 +12,11 @@ import Footer from '@/layout/Footer.vue'
 export default{
   components: {
     Header,
-    Footer
-  }
+    Footer,
+  },
 }
 </script>
 
-<style>
-
+<style lang="scss">
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
 </style>
