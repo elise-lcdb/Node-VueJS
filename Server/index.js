@@ -5,6 +5,7 @@ const app = express();
 var path = require('path');
 const port = 3000;
 var cors = require('cors');
+const SalarieController = require ('./controllers/salarie.controller.js');
 
 app.use(cors());
 app.use(express.urlencoded({extended:true}));
@@ -19,15 +20,19 @@ app.use(function(req, res, next) {
 	next();
 
 });
-// Create Database because that is an onld one 
-// mongoose.connect('mongodb://elise:a0a0a0@ds119734.mlab.com:19734/nodejs-dev-1', (err) => {
-// 	if(err) {
-// 		console.log('Database not found');
-// 	}
-// 	else {
-// 		console.log('Database connected');
-// 	}
-// })
+mongoose.connect('mongodb://admin:A12345@ds155663.mlab.com:55663/node-projet', (err) => {
+	if(err) {
+		console.log('Database not found');
+	}
+	else {
+		console.log('Database connected');
+	}
+})
+app.post('/api/v1/products/addsalarie', SalarieController.createSalarie);
+app.get('/api/v1/salarie', SalarieController.allSalarie);
+app.get('/api/v1/salarie/:id', SalarieController.oneSalarie);
+app.get('/api/v1/salarie/remove/:id', SalarieController.removeSalarie);
+app.put('/api/v1/salarie/:id', SalarieController.updateSalarie);
 app.listen(port, () => {
 	console.log(`Server on on port ${port}`);
 })
