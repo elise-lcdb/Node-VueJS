@@ -29,10 +29,11 @@ mongoose.connect('mongodb://admin:A12345@ds155663.mlab.com:55663/node-projet', (
 	}
 })
 app.post('/api/v1/salarie/add/', SalarieController.createSalarie);
-app.get('/api/v1/salarie/', SalarieController.allSalarie);
-app.get('/api/v1/salarie/:id', SalarieController.oneSalarie);
-app.get('/api/v1/salarie/remove/:id', SalarieController.removeSalarie);
+// app.get('/api/v1/salarie/', SalarieController.allSalarie);
+// app.get('/api/v1/salarie/:id', SalarieController.oneSalarie);
+// app.get('/api/v1/salarie/remove/:id', SalarieController.removeSalarie);
 app.put('/api/v1/salarie/:id', SalarieController.updateSalarie);
+
 app.listen(port, () => {
 	console.log(`Server on on port ${port}`);
 })

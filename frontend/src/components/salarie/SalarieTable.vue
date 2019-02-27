@@ -26,7 +26,7 @@
 	</div>
 </template>
 <script>
-import SalarieService from '../service/SalarieService';
+import SalarieService from '@/Service/SalarieService.vue';
 
 export default {
   name: 'SalarieTable',
