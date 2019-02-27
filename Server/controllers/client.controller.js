@@ -81,7 +81,7 @@ exports.updateManyClient = (req, res) => {
     })
 }
 
-exports.getClient = (req, res ) => {
+exports.allClient = (req, res ) => {
     Salarie.find((err, Client) => {
         if(err) {
             console.log(err);

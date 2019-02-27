@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
-var path = require('path');
 const port = 3000;
 var cors = require('cors');
 const SalarieController = require ('./controllers/salarie.controller.js');
@@ -31,22 +30,22 @@ mongoose.connect('mongodb://admin:A12345@ds155663.mlab.com:55663/node-projet', (
 	}
 })
 app.post('/api/v1/salarie/add/', SalarieController.createSalarie);
-// app.get('/api/v1/salarie/', SalarieController.allSalarie);
-// app.get('/api/v1/salarie/:id', SalarieController.oneSalarie);
-// app.get('/api/v1/salarie/remove/:id', SalarieController.removeSalarie);
+app.get('/api/v1/salarie/', SalarieController.allSalarie);
+app.get('/api/v1/salarie/:id', SalarieController.getSalarie);
+app.get('/api/v1/salarie/remove/:id', SalarieController.deleteSalarie);
 app.put('/api/v1/salarie/:id', SalarieController.updateSalarie);
 
 //Client
 app.post('/api/v1/client/add/', ClientController.createClient);
 app.get('/api/v1/client/', ClientController.allClient);
-app.get('/api/v1/client/:id', ClientController.oneClient);
-app.get('/api/v1/client/remove/:id', ClientController.removeClient);
+app.get('/api/v1/client/:id', ClientController.getClient);
+app.get('/api/v1/client/remove/:id', ClientController.deleteClient);
 app.put('/api/v1/client/:id', ClientController.updateClient);
 //Projet
 app.post('/api/v1/projet/add/', ProjetController.createProjet);
 app.get('/api/v1/projet/', ProjetController.allProjet);
-app.get('/api/v1/projet/:id', ProjetController.oneProjet);
-app.get('/api/v1/projet/remove/:id', ProjetController.removeProjet);
+app.get('/api/v1/projet/:id', ProjetController.getProjet);
+app.get('/api/v1/projet/remove/:id', ProjetController.deleteProjet);
 app.put('/api/v1/projet/:id', ProjetController.updateProjet);
 
 app.listen(port, () => {

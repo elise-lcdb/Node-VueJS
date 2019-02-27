@@ -74,7 +74,7 @@ exports.updateManyProjet = (req, res) => {
     })
 }
 
-exports.getProjet = (req, res ) => {
+exports.allProjet = (req, res ) => {
     Projet.find((err, Projet) => {
         if(err) {
             console.log(err);

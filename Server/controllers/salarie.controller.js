@@ -2,43 +2,42 @@ const Salarie = require ('../models/salarie.model.js');
 const fs = require('fs');
 
 exports.createSalarie = (req, res) => {
-    let Salarie = new Salarie(
+    let salarie = new Salarie(
         {
             nom: req.body.nom,
             prenom: req.body.prenom,
             username: req.body.username,
             ddn: req.body.ddn,
-            adresse: {
                 rue: req.body.rue,
                 ville: req.body.ville,
                 cp: req.body.cp,
-            },
             telephone: req.body.telephone,
             mail: req.body.mail,
-            poste: req.body.poste,
+            poste: req.body.poste
 
         }
     );
-    Salarie.save((err) => {
-        if(err) {
+    salarie.save( (err) => {
+        if (err) {
             console.log(err);
         }
+
         else {
-            console.log("Salarié created");
+            console.log("Salarie created");
         }
-        res.send(Salarie);
+        res.send('Salarie created' + salarie);
     })
 }
 
 exports.updateSalarie = (req, res) => {
-    Salarie.findByIdAndUpdate(req.params.id,req.body, function (err, Salarie) {
+    Salarie.findByIdAndUpdate(req.params.id,req.body, function (err, salarie) {
         if(err) {
             console.log(err);
         }
         else {
             console.log('updated')
         }
-        res.send(Salarie);
+        res.send(salarie);
     })
 }
 
@@ -76,23 +75,23 @@ exports.updateManySalarie = (req, res) => {
         }
 
         console.log(req.params.nom);
-        res.send('Salariés updated');
+        res.send('Salaries updated');
     })
 }
 
-exports.getSalarie = (req, res ) => {
-    Salarie.find((err, Salarie) => {
+exports.allSalarie = (req, res ) => {
+    Salarie.find((err, salarie) => {
         if(err) {
             console.log(err);
         }
-        res.send(Salarie);
+        res.send(salarie);
     })
 }
 
 exports.getSalarie = function (req, res) {
-    Salarie.findById(req.params.id, function (err, Salarie) {
-        if (err) return (Salarie);
-        res.send(Salarie);
+    Salarie.findById(req.params.id, function (err, salarie) {
+        if (err) return (salarie);
+        res.send(salarie);
     });
 };
 
