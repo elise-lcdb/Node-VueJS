@@ -4,7 +4,7 @@
 	</div>
 </template>
 <script>
-import ClientTable from '@/components/client/ClientTable.vue'
+import ClientTable from '@/components/clients/ClientTable.vue'
 export default{
 	components: {
 		ClientTable

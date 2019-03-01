@@ -4,7 +4,7 @@
 	</div>
 </template>
 <script>
-import CreateClient from '@/components/client/CreateClient.vue'
+import CreateClient from '@/components/clients/CreateClient.vue'
 export default{
 	components: {
 		CreateSClient
