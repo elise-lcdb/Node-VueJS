@@ -7,7 +7,7 @@
 import CreateClient from '@/components/clients/CreateClient.vue'
 export default{
 	components: {
-		CreateSClient
+		CreateClient
 	}
 }
 </script>

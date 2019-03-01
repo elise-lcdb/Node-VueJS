@@ -4,7 +4,8 @@
 	</div>
 </template>
 <script>
-import CreateProjet from '@/components/projet/CreateProjet.vue'
+import CreateProjet from '@/components/projets/CreateProjet.vue'
+
 export default{
 	components: {
 		CreateProjet

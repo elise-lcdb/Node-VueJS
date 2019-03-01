@@ -3,119 +3,48 @@
   const myApiUrladd = "http://localhost:3000/api/v1/salarie/add/";
   const myApiUrlremove = "http://localhost:3000/api/v1/salarie/remove/";
 
-
-	// export default {
-	// 	getSalarie () {
-	// 		return fetch(myApiUrl)
-	// 		.then((response) => {
-	// 			return response.json();
-	// 		})
-	// 	},
-	// 	createSalarie(nom, prenom, username, ddn, rue, ville, cp, telephone, mail, poste){
- //      fetch(myApiUrladd , {
- //        method: 'post',
- //        headers: {
- //          'Accept': 'application/json',
- //          'Content-Type': 'application/json'
- //        },
- //        body:JSON.stringify({
- //          "nom": nom,
- //          "prenom": prenom,
- //          "username": username,
- //          "ddn": ddn,
- //            "rue": rue,
- //            "ville": ville,
- //            "cp": cp,
- //          "telephone": telephone,
- //          "mail": mail,
- //          "poste": poste,
- //        })
- //      })
- //      .then((response) => {
- //        console.log(response);
- //        return response.json();
- //      })
-	// 	},
-	// 	deleteSalarie(id){
-	// 		return fetch(myApiUrlremove + id)
- //      	.then((response) => {
- //        	console.log(response);
- //        	return response.json();
- //      	})
-	// 	},
-	// 	editSalarie(nom, prenom, username, ddn, rue, ville, cp, telephone, mail, poste) {
-	// 		fetch(myApiUrl + id, {
- //        method: 'get',
- //        headers: {
- //          'Accept': 'application/json',
- //          'Content-Type': 'application/json'
- //        },
- //        body:JSON.stringify({
- //         "nom": nom,
- //          "prenom": prenom,
- //          "username": username,
- //          "ddn": ddn,
- //            "rue": rue,
- //            "ville": ville,
- //            "cp": cp,
- //          "telephone": telephone,
- //          "mail": mail,
- //          "poste": poste,
- //        })
- //      })
- //      .then((response) => {
- //        console.log(response);
- //        return response.json();
- //      })
-	// 	},
-	// 	getSalarie(id) {
-	// 		return fetch(myApiUrl + id)
-	// 		.then((response) => {
-	// 			return response.json();
-	// 		})
-
-	// 	}	
-	// };
   export default {
     getSalarie () {
       return fetch(myApiUrl)
       .then((response) => {
+        console.log(response)
         return response.json();
       })
     },
-    createSalarie (nom, prenom, username, ddn, rue, ville, cp, telephone, mail, poste){
+    createSalarie (salarienom, salarieprenom, salarieusername, salarieddn, salarierue, salarieville, salariecp, salarietel, salariemail, salarieposte){
       fetch(myApiUrladd, {
         method: 'post',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
+        // headers: {
+        //   'Accept': 'application/json',
+        //   'Content-Type': 'application/json',
+        // },
         body:JSON.stringify({
-          "nom": nom,
-          "prenom": prenom,
-          "username": username,
-          "ddn": ddn,
-          "rue": rue,
-          "ville": ville,
-          "cp": cp,
-          "telephone": telephone,
-          "mail": mail,
-          "poste": poste,
-        })
+          "salarienom": salarienom,
+          "salarieprenom": salarieprenom,
+          "salarieusername": salarieusername,
+          "salarieddn": salarieddn,
+          "salarierue": salarierue,
+          "salarieville": salarieville,
+          "salariecp": salariecp,
+          "salarietel": salarietel,
+          "salariemail": salariemail,
+          "salarieposte": salarieposte,
+        }),
+        headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
       })
       .then((response) => {
         console.log(response);
-        console.log(nom)
         return response.json();
       })
     },
     deleteSalarie(id){
       return fetch(myApiUrlremove + id)
        .then((response) => {
-        return response.json();
+        console.log(response);
+          return response.json();
         })
     },
-    editSalarie(nom, prenom, username, ddn, rue, ville, cp, telephone, mail, poste) {
+    editSalarie(id, salarienom, salarieprenom, salarieusername, salarieddn, salarierue, salarieville, salariecp, salarietel, salariemail, salarieposte) {
       fetch(myApiUrl + id, {
         method: 'get',
         headers: {
@@ -123,16 +52,16 @@
           'Content-Type': 'application/json'
         },
         body:JSON.stringify({
-          "nom": nom,
-          "prenom": prenom,
-          "username": username,
-          "ddn": ddn,
-            "rue": rue,
-            "ville": ville,
-            "cp": cp,
-          "telephone": telephone,
-          "mail": mail,
-          "poste": poste,
+          "salarienom": salarienom,
+          "salarieprenom": salarieprenom,
+          "salarieusername": salarieusername,
+          "salarieddn": salarieddn,
+          "salarierue": salarierue,
+          "salarieville": salarieville,
+          "salariecp": salariecp,
+          "salarietel": salarietel,
+          "salariemail": salariemail,
+          "salarieposte": salarieposte,
         })
       })
       .then((response) => {

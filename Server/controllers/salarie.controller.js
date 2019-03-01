@@ -1,97 +1,76 @@
 const Salarie = require ('../models/salarie.model.js');
-const fs = require('fs');
 
 exports.createSalarie = (req, res) => {
-    let salarie = new Salarie(
-        {
-            nom: req.body.nom,
-            prenom: req.body.prenom,
-            username: req.body.username,
-            ddn: req.body.ddn,
-                rue: req.body.rue,
-                ville: req.body.ville,
-                cp: req.body.cp,
-            telephone: req.body.telephone,
-            mail: req.body.mail,
-            poste: req.body.poste
+	let salarie = new Salarie(
+		{
+			salarienom: req.body.salarienom,
+			salarieprenom: req.body.salarieprenom,
+			salarieusername: req.body.salarieusername,
+			salarieddn: req.body.salarieddn,
+			salarierue: req.body.salarierue,
+			salarieville: req.body.salarieville,
+			salariecp: req.body.salariecp,
+			salarietel: req.body.salarietel,
+			salariemail: req.body.salariemail,
+			salarieposte: req.body.salarieposte,
+		}
+	);
+	salarie.save( (err) => {
+		if (err) {
+			console.log(err);
+		}
 
-        }
-    );
-    salarie.save( (err) => {
-        if (err) {
-            console.log(err);
-        }
+		else {
+			console.log("Salarie created");
+		}
+		res.send(salarie);
+	})
+}
 
-        else {
-            console.log("Salarie created");
-        }
-        res.send('Salarie created' + salarie);
-    })
+exports.allSalarie = (req, res) => {
+	Salarie.find((err, salarie) => {
+		if(err) {
+			console.log(err);
+		}
+		res.send(salarie);
+	})
+}
+
+exports.oneSalarie = (req, res) => {
+	Salarie.findById(req.params.id, (err, salarie) => {
+		if(err) {
+			console.log(err);
+		}
+		res.send(salarie);
+	})
+}
+
+exports.removeSalarie = (req, res) => {
+	Salarie.findByIdAndRemove(req.params.id, (err, salarie) => {
+		if(err) {
+			console.log(err);
+		}
+		res.send("Salarie deleted");
+	})
 }
 
 exports.updateSalarie = (req, res) => {
-    Salarie.findByIdAndUpdate(req.params.id,req.body, function (err, salarie) {
-        if(err) {
-            console.log(err);
-        }
-        else {
-            console.log('updated')
-        }
-        res.send(salarie);
-    })
+	Salarie.findByIdAndUpdate(req.params.id, req.body, (err, salarie) => {
+		if(err) {
+			console.log(err);
+		}
+		res.send("Salarie modified");
+	})
 }
-
-
-exports.deleteSalarie = (req, res) => {
-    Salarie.findByIdAndRemove(req.params.id, (err) => {
-        if(err) {
-            console.log(err);
-        }
-        res.send('Salarié successfully deleted');
-    })
-}
-exports.deleteManySalarie = (req, res) => {
-    let deleteParam = {
-        nom:req.params.nom
-    }
-    Salarie.deleteMany(deleteParam, (err) => {
-        console.log(deleteParam);;
-
-        if(err) {
-            console.log(err);
-        }
-
-        console.log(req.params.nom);
-        res.send('successfully');
-    })
-}
-exports.updateManySalarie = (req, res) => {
-    Salarie.updateMany(
-        { nom: req.params.data },
-        { $set: { nom: req.params.newdata } },
-        (err) => {
-        if(err) {
-            console.log(err);
-        }
-
-        console.log(req.params.nom);
-        res.send('Salaries updated');
-    })
-}
-
-exports.allSalarie = (req, res ) => {
-    Salarie.find((err, salarie) => {
-        if(err) {
-            console.log(err);
-        }
-        res.send(salarie);
-    })
-}
-
-exports.getSalarie = function (req, res) {
-    Salarie.findById(req.params.id, function (err, salarie) {
-        if (err) return (salarie);
-        res.send(salarie);
-    });
-};
-
+// exports.deleteManySalarie = (req, res) => {
+// 	let deleteParam = {
+// 		productname: req.params.productname
+// 	}
+// 	Product.deleteMany(deleteParam, (err) => {
+// 		console.log(deleteParam)
+// 		if(err){
+// 			console.log(err)
+// 		}
+// 		res.send('Product successfully deleted')
+// 	})
+// }

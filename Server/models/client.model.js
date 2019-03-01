@@ -1,21 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let ClientSchema = new Schema ({
-    nom_entreprise: String,
-    adresse: {
-        rue: String,
-        ville: String,
-        cp: Number,
-    },
-    contact_referent: {
-        nom: String,
-        prenom: String,
-        mail: String,
-        telephone: Number,
-    },
-    secteur_activite: String,
-    
-});
+let ClientSchema = new Schema (
+	{
+		cliententreprise: String,
+		clientrue: String,
+		clientville: String,
+		clientcp: String,
+		clientrefnom: String,
+		clientrefprenom: String,
+		clientrefmail: String,
+		clientreftel: String,
+		clientsec: String
+	}
+);
 
 module.exports = mongoose.model('Client', ClientSchema);

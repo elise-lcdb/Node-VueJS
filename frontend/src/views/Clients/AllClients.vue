@@ -1,13 +1,14 @@
 <template>
 	<div>
-		<ClientTable />
+		<ClientsTable />
 	</div>
 </template>
 <script>
-import ClientTable from '@/components/clients/ClientTable.vue'
+import ClientsTable from '@/components/clients/ClientsTable.vue'
+
 export default{
 	components: {
-		ClientTable
+		ClientsTable
 	}
 };
 </script>

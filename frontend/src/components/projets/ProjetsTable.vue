@@ -26,7 +26,7 @@
 	</div>
 </template>
 <script>
-import ProjetService from '@/Service/ProjetService.vue';
+import ProjetService from '@/Service/projetService.vue';
 
 export default {
   name: 'ProjetTable',

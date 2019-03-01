@@ -1,5 +1,5 @@
 <script>
-	const myApiUrl = "http://localhost:3000/api/v1/client/";
+  const myApiUrl = "http://localhost:3000/api/v1/client/";
   const myApiUrladd = "http://localhost:3000/api/v1/client/add/";
   const myApiUrlremove = "http://localhost:3000/api/v1/client/remove/";
 
@@ -10,7 +10,7 @@
         return response.json();
       })
     },
-    createClient (nom_entreprise, adresse, rue, ville, cp, contact_referent, nom, prenom, telephone, mail, secteur_activite)
+    createClient (cliententreprise, clientrue, clientville, clientcp, clientrefnom, clientrefprenom, clientrefmail, clientreftel, clientsec)
     {
       fetch(myApiUrladd, {
         method: 'post',
@@ -19,17 +19,15 @@
           'Content-Type': 'application/json'
         },
         body:JSON.stringify({
-          "nom_entreprise": nom_entreprise,
-          "adresse": adresse,
-            "rue": rue,
-            "ville": ville,
-            "cp": cp,
-            "contact_referent": contact_referent,
-            "nom": nom,
-            "prenom": prenom,
-          "telephone": telephone,
-          "mail": mail,
-          "secteur_activite": secteur_activite,
+          "cliententreprise": cliententreprise,
+          "clientrue": clientrue,
+          "clientville": clientville,
+          "clientcp": clientcp,
+          "clientrefnom": clientrefnom,
+          "clientrefprenom": clientrefprenom,
+          "clientrefmail": clientrefmail,
+          "clientreftel": clientreftel,
+          "clientsec": clientsec,
         })
       })
       .then((response) => {
@@ -43,7 +41,7 @@
         return response.json();
         })
     },
-    editClient(nom_entreprise, adresse, rue, ville, cp, contact_referent, nom, prenom, telephone, mail, secteur_activite) {
+    editClient(cliententreprise, clientrue, clientville, clientcp, clientrefnom, clientrefprenom, clientrefmail, clientreftel, clientsec) {
       fetch(myApiUrl + id, {
         method: 'get',
         headers: {
@@ -51,17 +49,15 @@
           'Content-Type': 'application/json'
         },
         body:JSON.stringify({
-          "nom_entreprise": nom_entreprise,
-          "adresse": adresse,
-            "rue": rue,
-            "ville": ville,
-            "cp": cp,
-            "contact_referent": contact_referent,
-            "nom": nom,
-            "prenom": prenom,
-          "telephone": telephone,
-          "mail": mail,
-          "secteur_activite": secteur_activite,
+          "cliententreprise": cliententreprise,
+          "clientrue": clientrue,
+          "clientville": clientville,
+          "clientcp": clientcp,
+          "clientrefnom": clientrefnom,
+          "clientrefprenom": clientrefprenom,
+          "clientrefmail": clientrefmail,
+          "clientreftel": clientreftel,
+          "clientsec": clientsec,
       })
       })
       .then((response) => {

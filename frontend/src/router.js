@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import AllProjects from './views/Projects/AllProjects.vue';
+import AllProjets from './views/Projets/AllProjets.vue';
 import AllClients from './views/Clients/AllClients.vue';
 import AllSalarie from './views/Salarie/AllSalarie.vue';
 import CreateSalarie from './views/Salarie/CreateSalarie.vue';
-import CreateProject from './views/Projects/CreateProjet.vue';
+import CreateProject from './views/Projets/CreateProjet.vue';
 import CreateClient from './views/Clients/CreateClient.vue';
 
 Vue.use(Router);
@@ -20,9 +20,9 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/projects',
-      name: 'AllProjects',
-      component: AllProjects,
+      path: '/projets',
+      name: 'AllProjets',
+      component: AllProjets,
     },
     {
       path: '/salarie',
@@ -40,7 +40,7 @@ export default new Router({
       component: AllClients,
     },
     {
-      path: '/CreatClient',
+      path: '/CreateClient',
       name: 'CreateClient',
       component: CreateClient,
     },

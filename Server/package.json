@@ -1,21 +1,22 @@
 {
-  "name": "server",
+  "name": "njs",
   "version": "1.0.0",
-  "description": "API",
+  "description": "School project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "author": "Elise LCDB & Imen Chebbi",
+  "author": "Elise Lcdb Imen Chebbi",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.18.9"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "mongoose": "^5.4.14"
+    "mongoose": "^5.4.3"
   }
 }
