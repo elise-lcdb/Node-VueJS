@@ -95,9 +95,9 @@
           "prenom": prenom,
           "username": username,
           "ddn": ddn,
-            "rue": rue,
-            "ville": ville,
-            "cp": cp,
+          "rue": rue,
+          "ville": ville,
+          "cp": cp,
           "telephone": telephone,
           "mail": mail,
           "poste": poste,
@@ -105,6 +105,7 @@
       })
       .then((response) => {
         console.log(response);
+        console.log(nom)
         return response.json();
       })
     },

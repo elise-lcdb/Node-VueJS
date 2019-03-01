@@ -6,9 +6,9 @@ let SalarieSchema = new Schema ({
     prenom: String,
     username: String,
     ddn: String,
-        rue: String,
-        ville: String,
-        cp: String,
+    rue: String,
+    ville: String,
+    cp: Number,
     telephone: String,
     mail: String,
     poste: String
