@@ -1,5 +1,8 @@
 <template>
 	<div>
+    <br>
+    <h1 style="text-align: center;">Salarié</h1>
+    <br>
 		  <table class="table">
     <thead>
       <tr>
@@ -20,11 +23,13 @@
 </td>
         <td><router-link :to="{ name: 'EditSalarie', params: {id: s._id } }">Modifer</router-link>
 </td>
-        <td><button>Supprimer</button></td>
+        <td><router-link :to="{ name: 'DeleteSalarie', params: {id: s._id } }">Supprimer</router-link>
+</td>
       </tr>
       
     </tbody>
   </table>
+  <br>
 	</div>
 </template>
 <script>
@@ -45,5 +50,6 @@ export default {
       })
       .catch(error => { console.log(error)});
   }
+
 };
 </script>

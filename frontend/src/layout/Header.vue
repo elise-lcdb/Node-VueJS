@@ -5,26 +5,16 @@
   		<router-link to="/" tag="a" class="navabr-brand">Home</router-link> 
 
   <!-- Links -->
-<!--   <ul class="navbar-nav">
+  <ul class="navbar-nav">
     <li class="nav-item">
-      <a class="nav-link" href="#">Link 1</a>
+      <router-link class="nav-item" tag="a" to="/salarie">Salarié</router-link>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Link 2</a>
+      <router-link class="nav-item" tag="a" to="/projet">Projet</router-link>
     </li>
- -->
-    <!-- Dropdown -->
-    <span class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle"id="navbardrop" data-toggle="dropdown">
-        Salaries
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">All Salariés</a>
-        <a class="dropdown-item" href="#">Create Salarié</a>
-        <a class="dropdown-item" href="#">Edit Salarié</a>
-        <a class="dropdown-item" href="#">Delete Salarié</a>
-      </div>
-    </span>
+    <li class="nav-item">
+      <router-link class="nav-item" tag="a" to="/client">Client</router-link>
+    </li>
   </ul>
 </nav>
 	
@@ -34,5 +24,8 @@
 <style scoped>
 a{
 	color: white !important;
+}
+li .nav-item{
+  padding: 0px 10px;
 }
 </style>

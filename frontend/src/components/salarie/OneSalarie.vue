@@ -1,6 +1,9 @@
 <template>
 	<div>
     <br>
+     <br>
+    <h1 style="text-align: center;">Salarié</h1>
+    <br>
 		  <table class="table">
     <thead>
       <tr>
@@ -32,6 +35,7 @@
       
     </tbody>
   </table>
+  <br>
 	</div>
 </template>
 <script>

@@ -1,5 +1,8 @@
 <template>
 	<div>
+		 <br>
+    <h1 style="text-align: center;">Modifier Salarié</h1>
+    <br>
 		<form>
 			<div class="form-group">
 		    	<label for="nom">Nom:</label>
@@ -49,6 +52,7 @@
  
   <button type="button" name="button" class="btn btn-primary" v-on:click="formData(salarienom, salarieprenom, salarieusername, salarieddn, salarierue, salarieville, salariecp, salarietel, salariemail, salarieposte)">Submit</button>
 	</form>
+	<br>
 	</div>
 </template>
 <script>
@@ -84,7 +88,10 @@ export default {
   methods: {
     formData: function (params, salarienom, salarieprenom, salarieusername, salarieddn, salarierue, salarieville, salariecp, salarietel, salariemail, salarieposte){
         SalarieService.editSalarie();   
-    }
+    },
+  },
+  mounted(){
+  	this.salarienom = salarie.salarienom;
   }
 };
 </script>

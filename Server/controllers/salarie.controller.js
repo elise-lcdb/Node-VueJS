@@ -27,7 +27,7 @@ exports.createSalarie = (req, res) => {
 	})
 }
 
-exports.allSalarie = (req, res) => {
+exports.getSalarie = (req, res) => {
 	Salarie.find((err, salarie) => {
 		if(err) {
 			console.log(err);
@@ -45,21 +45,21 @@ exports.oneSalarie = (req, res) => {
 	})
 }
 
-exports.removeSalarie = (req, res) => {
+exports.deleteSalarie = (req, res) => {
 	Salarie.findByIdAndRemove(req.params.id, (err, salarie) => {
 		if(err) {
 			console.log(err);
 		}
-		res.send("Salarie deleted");
+		res.send();
 	})
 }
 
-exports.updateSalarie = (req, res) => {
+exports.editSalarie = (req, res) => {
 	Salarie.findByIdAndUpdate(req.params.id, req.body, (err, salarie) => {
 		if(err) {
 			console.log(err);
 		}
-		res.send("Salarie modified");
+		res.send(salarie);
 	})
 }
 // exports.deleteManySalarie = (req, res) => {

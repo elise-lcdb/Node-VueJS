@@ -33,10 +33,10 @@ mongoose.connect('mongodb://elise:a0a0a0@ds119734.mlab.com:19734/nodejs-dev-1', 
 })
 //Salarie
 app.post('/api/v1/salarie/add', SalarieController.createSalarie);
-app.get('/api/v1/salarie', SalarieController.allSalarie);
+app.get('/api/v1/salarie', SalarieController.getSalarie);
 app.get('/api/v1/salarie/:id', SalarieController.oneSalarie);
-app.get('/api/v1/salarie/remove/:id', SalarieController.removeSalarie);
-app.put('/api/v1/salarie/:id', SalarieController.updateSalarie);
+app.get('/api/v1/salarie/remove/:id', SalarieController.deleteSalarie);
+app.put('/api/v1/salarie/:id', SalarieController.editSalarie);
 
 //Client
 app.post('/api/v1/client/add', ClientController.createClient);

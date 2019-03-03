@@ -18,60 +18,62 @@
           'Accept': 'application/json',
           'Content-Type': 'application/json',
         },
-        body:JSON.stringify({
-          "salarienom": salarienom,
-          "salarieprenom": salarieprenom,
-          "salarieusername": salarieusername,
-          "salarieddn": salarieddn,
-          "salarierue": salarierue,
-          "salarieville": salarieville,
-          "salariecp": salariecp,
-          "salarietel": salarietel,
-          "salariemail": salariemail,
-          "salarieposte": salarieposte,
+        body: JSON.stringify({
+          'salarienom': salarienom,
+          'salarieprenom': salarieprenom,
+          'salarieusername': salarieusername,
+          'salarieddn': salarieddn,
+          'salarierue': salarierue,
+          'salarieville': salarieville,
+          'salariecp': salariecp,
+          'salarietel': salarietel,
+          'salariemail': salariemail,
+          'salarieposte': salarieposte,
         }),
       })
-      .then((response) => {
-        console.log(response);
-        return response.json();
+       .then((response) => {
+        console.log(response)
+        return response.json()
       })
     },
     deleteSalarie(id){
       return fetch(myApiUrlremove + id)
        .then((response) => {
         console.log(response);
-          return response.json();
+          return response.json()
         })
     },
     editSalarie(id, salarienom, salarieprenom, salarieusername, salarieddn, salarierue, salarieville, salariecp, salarietel, salariemail, salarieposte) {
       fetch(myApiUrl + id, {
-        method: 'get',
+        method: 'put',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
-        body:JSON.stringify({
-          "salarienom": salarienom,
-          "salarieprenom": salarieprenom,
-          "salarieusername": salarieusername,
-          "salarieddn": salarieddn,
-          "salarierue": salarierue,
-          "salarieville": salarieville,
-          "salariecp": salariecp,
-          "salarietel": salarietel,
-          "salariemail": salariemail,
-          "salarieposte": salarieposte,
-        })
+        body: JSON.stringify(
+        {
+          'salarienom': salarienom,
+          'salarieprenom': salarieprenom,
+          'salarieusername': salarieusername,
+          'salarieddn': salarieddn,
+          'salarierue': salarierue,
+          'salarieville': salarieville,
+          'salariecp': salariecp,
+          'salarietel': salarietel,
+          'salariemail': salariemail,
+          'salarieposte': salarieposte,
+        }
+        )
       })
-      .then((response) => {
-        console.log(response);
-        return response.json();
+       .then((response) => {
+        console.log(response)
+        return response.json()
       })
     },
     oneSalarie(id) {
       return fetch(myApiUrl + id)
       .then((response) => {
-        return response.json();
+        return response.json()
       })
 
     } 
