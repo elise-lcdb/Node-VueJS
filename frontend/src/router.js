@@ -5,6 +5,8 @@ import AllProjets from './views/Projets/AllProjets.vue';
 import AllClients from './views/Clients/AllClients.vue';
 import AllSalarie from './views/Salarie/AllSalarie.vue';
 import CreateSalarie from './views/Salarie/CreateSalarie.vue';
+import OneSalarie from './views/Salarie/OneSalarie.vue';
+import EditSalarie from './views/Salarie/EditSalarie.vue';
 import CreateProject from './views/Projets/CreateProjet.vue';
 import CreateClient from './views/Clients/CreateClient.vue';
 
@@ -44,5 +46,16 @@ export default new Router({
       name: 'CreateClient',
       component: CreateClient,
     },
+    {
+   path: '/salarie/:id', 
+   name: 'OneSalarie', 
+   component: OneSalarie
+  },
+   {
+   path: '/salarie/edit/:id', 
+   name: 'EditSalarie', 
+   component: EditSalarie
+  },
+
   ],
 });

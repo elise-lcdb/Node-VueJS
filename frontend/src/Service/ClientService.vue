@@ -65,7 +65,7 @@
         return response.json();
       })
     },
-    getClient(id) {
+    oneClient(id) {
       return fetch(myApiUrl + id)
       .then((response) => {
         return response.json();

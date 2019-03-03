@@ -13,11 +13,13 @@
     </thead>
     <tbody>
       <tr v-for="s in salarie">
-        <td>{{s.prenom}}</td>
-        <td>{{s.nom}}</td>
-        <td>{{s.poste}}</td>
-        <td><button>Voir</button></td>
-        <td><button>Modifier</button></td>
+        <td>{{s.salarieprenom}}</td>
+        <td>{{s.salarienom}}</td>
+        <td>{{s.salarieposte}}</td>
+        <td><router-link :to="{ name: 'OneSalarie', params: {id: s._id } }">Voir</router-link>
+</td>
+        <td><router-link :to="{ name: 'EditSalarie', params: {id: s._id } }">Modifer</router-link>
+</td>
         <td><button>Supprimer</button></td>
       </tr>
       

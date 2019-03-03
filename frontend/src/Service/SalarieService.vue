@@ -4,20 +4,20 @@
   const myApiUrlremove = "http://localhost:3000/api/v1/salarie/remove/";
 
   export default {
-    getSalarie () {
+    getSalarie() {
       return fetch(myApiUrl)
       .then((response) => {
         console.log(response)
         return response.json();
       })
     },
-    createSalarie (salarienom, salarieprenom, salarieusername, salarieddn, salarierue, salarieville, salariecp, salarietel, salariemail, salarieposte){
+    createSalarie(salarienom, salarieprenom, salarieusername, salarieddn, salarierue, salarieville, salariecp, salarietel, salariemail, salarieposte){
       fetch(myApiUrladd, {
         method: 'post',
-        // headers: {
-        //   'Accept': 'application/json',
-        //   'Content-Type': 'application/json',
-        // },
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+        },
         body:JSON.stringify({
           "salarienom": salarienom,
           "salarieprenom": salarieprenom,
@@ -30,7 +30,6 @@
           "salariemail": salariemail,
           "salarieposte": salarieposte,
         }),
-        headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
       })
       .then((response) => {
         console.log(response);
@@ -69,7 +68,7 @@
         return response.json();
       })
     },
-    getSalarie(id) {
+    oneSalarie(id) {
       return fetch(myApiUrl + id)
       .then((response) => {
         return response.json();

@@ -1,45 +1,45 @@
 <template>
 	<div>
-		<form action="/action_page.php">
+		<form>
 			<div class="form-group">
 		    	<label for="nom">Nom:</label>
-		    	<input type="text" class="form-control" id="nom" v-model="salarienom">
+		    	<input type="text" class="form-control" id="nom" v-model="salarienom" :placeholder="salarie.salarienom" >
 		 	</div>
 		 	<div class="form-group">
 		    	<label for="prenom">Prénom:</label>
-		    	<input type="text" class="form-control" id="prenom" v-model="salarieprenom">
+		    	<input type="text" class="form-control" id="prenom" v-model="salarieprenom" :placeholder="salarie.salarieprenom">
 		 	</div>
 		 	<div class="form-group">
 		    	<label for="username">Username:</label>
-		    	<input type="text" class="form-control" id="username" v-model="salarieusername">
+		    	<input type="text" class="form-control" id="username" v-model="salarieusername" :placeholder="salarie.salarieusername">
 		 	</div>
 		 	<div class="form-group">
 		    	<label for="ddn">Date de Naissance:</label>
-		    	<input type="date" class="form-control" id="ddn" v-model="salarieddn">
+		    	<input type="date" class="form-control" id="ddn" v-model="salarieddn" :placeholder="salarie.salarieddn">
 		 	</div>
 		 	<div class="form-group">
 		    	<label for="rue">Rue:</label>
-		    	<input type="text" class="form-control" id="rue" v-model="salarierue">
+		    	<input type="text" class="form-control" id="rue" v-model="salarierue" :placeholder="salarie.salarierue">
 		 	</div>
 		 	<div class="form-group">
 		    	<label for="ville">Ville:</label>
-		    	<input type="text" class="form-control" id="ville" v-model="salarieville">
+		    	<input type="text" class="form-control" id="ville" v-model="salarieville" :placeholder="salarie.salarieville">
 		 	</div>
 		 	<div class="form-group">
 		    	<label for="cp">Code Postale:</label>
-		    	<input type="text" class="form-control" id="cp" v-model="salariecp">
+		    	<input type="text" class="form-control" id="cp" v-model="salariecp" :placeholder="salarie.salariecp">
 		 	</div>
 		 	<div class="form-group">
 		    	<label for="telephone">Telephone:</label>
-		    	<input type="text" class="form-control" id="telephone" v-model="salarietel">
+		    	<input type="text" class="form-control" id="telephone" v-model="salarietel" :placeholder="salarie.salarietel">
 		 	</div>
 		  <div class="form-group">
 		    <label for="mail">Adresse Mail:</label>
-		    <input type="semail" class="form-control" id="smail" v-model="salariemail">
+		    <input type="semail" class="form-control" id="smail" v-model="salariemail" :placeholder="salarie.salariemail">
 		  </div>
 		  <div class="form-group">
 		  	<label>Poste:</label>
-		  	<select name="sposte" class="custom-select" id="sposte" v-model="salarieposte">
+		  	<select name="sposte" class="custom-select" id="sposte" v-model="salarieposte" :placeholder="salarie.salarieposte">
     			<option value="Chef de projet">Chef de projet</option>
     			<option value="Développeur">Développeur</option>
     			<option value="Commercial">Commercial</option>
@@ -55,9 +55,10 @@
 import SalarieService from '../../Service/SalarieService.vue';
 
 export default {
-	name: 'CreateSalarie',
+	name: 'EditSalarie',
   data () {
     return {
+    	salarie: [],
       salarienom: "",
       salarieprenom: "",
       salarieusername: "",
@@ -70,9 +71,19 @@ export default {
       salarieposte: ""
     }
   },
+  created() {
+      let params = this.$route.params.id;
+      SalarieService.oneSalarie(params)
+        .then((data) => {
+          this.salarie = data;
+          console.log(this.salarie);
+      })
+      .catch(error => { console.log(error)});
+   
+},
   methods: {
-    formData: function (salarienom, salarieprenom, salarieusername, salarieddn, salarierue, salarieville, salariecp, salarietel, salariemail, salarieposte){
-        SalarieService.createSalarie();   
+    formData: function (params, salarienom, salarieprenom, salarieusername, salarieddn, salarierue, salarieville, salariecp, salarietel, salariemail, salarieposte){
+        SalarieService.editSalarie();   
     }
   }
 };
