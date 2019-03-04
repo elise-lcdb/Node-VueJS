@@ -64,8 +64,7 @@
           'salarietel': salarietel,
           'salariemail': salariemail,
           'salarieposte': salarieposte,
-        }
-        )
+        })
       })
        .then((response) => {
         console.log(response)
