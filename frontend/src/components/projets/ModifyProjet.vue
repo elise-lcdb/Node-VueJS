@@ -56,7 +56,7 @@ export default {
   },
   created() {
       let params = this.$route.params.id;
-      SalarieService.oneSalarie(params)
+      ProjetService.oneProjet(params)
         .then((data) => {
           this.projet = data;
           console.log(data);
@@ -72,7 +72,7 @@ export default {
 },
   methods: {
     formData: function (projetnom, projetdescription, projetdatedebut, projetdatefin, projetmontant, projetstatut){
-        ProjetService.editSalarie( this.$route.params.idprojetnom, projetdescription, projetdatedebut, projetdatefin, projetmontant, projetstatut);
+        ProjetService.editProjet( this.$route.params.id, projetnom, projetdescription, projetdatedebut, projetdatefin, projetmontant, projetstatut);
 
     },
   }

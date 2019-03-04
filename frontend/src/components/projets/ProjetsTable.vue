@@ -19,12 +19,15 @@
     </thead>
     <tbody>
       <tr v-for="p in projet">
-        <td>{{p.nom}}</td>
-        <td>{{p.description}}</td>
-        <td>{{p.statut}}</td>
-        <td><button>Voir</button></td>
-        <td><button>Modifier</button></td>
-        <td><button>Supprimer</button></td>
+        <td>{{p.projetnom}}</td>
+        <td>{{p.projetdescription}}</td>
+        <td>{{p.projetstatut}}</td>
+        <td><router-link :to="{ name: 'OneProjet', params: {id: p._id } }">Voir</router-link>
+</td>
+        <td><router-link :to="{ name: 'EditProjet', params: {id: p._id } }">Modifier</router-link>
+</td>
+        <td><router-link :to="{ name: 'DeleteProjet', params: {id: p._id } }">Supprimer</router-link>
+</td>
       </tr>
       
     </tbody>

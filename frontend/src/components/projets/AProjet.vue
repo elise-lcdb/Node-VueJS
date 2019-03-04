@@ -17,12 +17,12 @@
     </thead>
     <tbody>
       <tr>
-        <td>{{projets.projetnom}}</td>
-        <td>{{projets.projetdescription}}</td>
-        <td>{{projets.projetdatedebut}}</td>
-        <td>{{projets.projetdatefin}}</td>
-        <td>{{projets.projetmontant}}</td>
-        <td>{{projets.projetstatut}}</td>
+        <td>{{projet.projetnom}}</td>
+        <td>{{projet.projetdescription}}</td>
+        <td>{{projet.projetdatedebut}}</td>
+        <td>{{projet.projetdatefin}}</td>
+        <td>{{projet.projetmontant}}</td>
+        <td>{{projet.projetstatut}}</td>
       </tr>
       
     </tbody>
@@ -36,12 +36,12 @@ import projetService from '@/Service/projetService.vue';
 export default {
     data () {
     return {
-      salarie: []
+      projet: []
       }
   },
     created() {
       let params = this.$route.params.id;
-      projetService.oneSalarie(params)
+      projetService.oneProjet(params)
         .then((data) => {
           this.projet = data;
           console.log(this.projet);

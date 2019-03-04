@@ -2,11 +2,11 @@
 	<div>
 		<br>
 		<h3>Your Project has been deleted</h3>
-		<router-link tag="a" to="/projet">Go Back</router-link>
+		<router-link tag="a" to="/projets">Go Back</router-link>
 	</div>
 </template>
 <script>
-import ProjetService from '../../Service/ProjetService.vue';
+import ProjetService from '../../Service/projetService.vue';
 
 export default {
 	name: 'RemoveProjet',

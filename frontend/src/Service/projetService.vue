@@ -40,9 +40,9 @@
         return response.json();
         })
     },
-    editProjet(projetnom, projetdescription, projetdatedebut, projetdatefin, projetmontant, projetstatut) {
+    editProjet(id, projetnom, projetdescription, projetdatedebut, projetdatefin, projetmontant, projetstatut) {
       fetch(myApiUrl + id, {
-        method: 'get',
+        method: 'put',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'

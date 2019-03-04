@@ -70,7 +70,7 @@ export default new Router({
   {
   path: '/projets/:id', 
    name: 'OneProjet', 
-   component: Oneprojet,
+   component: OneProjet,
   },
   {
   path: '/clients/:id', 
