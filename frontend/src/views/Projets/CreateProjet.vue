@@ -8,7 +8,7 @@ import AddProjet from '@/components/projets/AddProjet.vue'
 
 export default{
 	components: {
-		AddProjet
+		AddProjet,
 	}
 }
 </script>

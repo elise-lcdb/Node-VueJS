@@ -10,9 +10,15 @@ import DeleteSalarie from './views/Salarie/DeleteSalarie.vue';
 // Projet
 import AllProjets from './views/Projets/AllProjets.vue';
 import CreateProjet from './views/Projets/CreateProjet.vue';
+import OneProjet from './views/Projets/OneProjet.vue';
+import EditProjet from './views/Projets/EditProjet.vue';
+import DeleteProjet from './views/Projets/DeleteProjet.vue';
 // Clients
 import AllClients from './views/Clients/AllClients.vue';
 import CreateClient from './views/Clients/CreateClient.vue';
+import OneClient from './views/Clients/OneClient.vue';
+import EditClient from './views/Clients/EditClient.vue';
+import DeleteClient from './views/Clients/DeleteClient.vue';
 
 Vue.use(Router);
 
@@ -36,15 +42,21 @@ export default new Router({
       component: AllSalarie,
     },
     {
+      path: '/clients',
+      name: 'AllClients',
+      component: AllClients,
+    },
+    {
       path: '/CreateSalarie',
       name: 'CreateSalarie',
       component: CreateSalarie,
     },
     {
-      path: '/clients',
-      name: 'AllClients',
-      component: AllClients,
-    },
+   path: '/CreateProjet', 
+   name: 'CreateProjet', 
+   component: CreateProjet,
+  },
+    
     {
       path: '/CreateClient',
       name: 'CreateClient',
@@ -53,23 +65,52 @@ export default new Router({
     {
    path: '/salarie/:id', 
    name: 'OneSalarie', 
-   component: OneSalarie
+   component: OneSalarie,
   },
+  {
+  path: '/projets/:id', 
+   name: 'OneProjet', 
+   component: Oneprojet,
+  },
+  {
+  path: '/clients/:id', 
+   name: 'OneClient', 
+   component: OneClient,
+  },
+
    {
    path: '/salarie/edit/:id', 
    name: 'EditSalarie', 
    component: EditSalarie
+  },
+
+   {
+   path: '/projets/edit/:id', 
+   name: 'EditProjet', 
+   component: EditProjet,
+  },
+
+   {
+   path: '/clients/edit/:id', 
+   name: 'EditClient', 
+   component: EditClient,
   },
   {
    path: '/salarie/delete/:id', 
    name: 'DeleteSalarie', 
    component: DeleteSalarie
   },
-  {
-   path: '/CreateProjet', 
-   name: 'CreateProjet', 
-   component: CreateProjet
+   {
+   path: '/projets/delete/:id', 
+   name: 'DeleteProjet', 
+   component: DeleteProjet,
   },
+   {
+   path: '/clients/delete/:id', 
+   name: 'DeleteClient', 
+   component: DeleteClient,
+  },
+
 
   ],
 });
