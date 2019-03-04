@@ -2,7 +2,7 @@
 	<div>
 		<br>
 		<h3>Your Client has been deleted</h3>
-		<router-link tag="a" to="/client">Go Back</router-link>
+		<router-link tag="a" to="/clients">Go Back</router-link>
 	</div>
 </template>
 <script>

@@ -40,7 +40,7 @@
         <label for="secteur_activite">Secteur d'activité:</label>
         <input type="text" class="form-control" id="secteur_activite" v-model="clientsec">
       </div>
-  <router-link to="/client" tag="a">
+  <router-link to="/clients" tag="a">
   <button type="button" name="button" class="btn btn-primary" v-on:click="formData(cliententreprise, clientrue, clientville, clientcp, clientrefnom, clientrefprenom, clientrefmail, clientreftel, clientsec)">Submit</button>
 </router-link>
   </form>
@@ -48,12 +48,13 @@
   </div>
 </template>
 <script>
-import SalarieService from '../../Service/ClientService.vue';
+import ClientService from '../../Service/ClientService.vue';
 
 export default {
 	name: 'ModifyProjet',
   data () {
      return {
+      client: [],
         cliententreprise:"",
         clientrue:"",
         clientville:"",
@@ -67,9 +68,9 @@ export default {
   },
   created() {
       let params = this.$route.params.id;
-     ClientService.oneSalarie(params)
+     ClientService.oneClient(params)
         .then((data) => {
-          this.projet = data;
+          this.client = data;
           console.log(data);
           this.cliententreprise = this.client.cliententreprise;
           this.clientrue = this.client.clientrue;
@@ -86,7 +87,7 @@ export default {
 },
   methods: {
     formData: function (cliententreprise, clientrue, clientville, clientcp, clientrefnom, clientrefprenom, clientrefmail, clientreftel, clientsec){
-        ClientService.editSClient( this.$route.params.cliententreprise, clientrue, clientville, clientcp, clientrefnom, clientrefprenom, clientrefmail, clientreftel, clientsec);
+        ClientService.editClient( this.$route.params.id, cliententreprise, clientrue, clientville, clientcp, clientrefnom, clientrefprenom, clientrefmail, clientreftel, clientsec);
 
     },
   }

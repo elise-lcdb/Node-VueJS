@@ -24,7 +24,7 @@
         <td>{{client.clientrue}}</td>
         <td>{{client.clientville}}</td>
         <td>{{client.clientcp}}</td>
-        <td>{{client.clientrefnom}</td>
+        <td>{{client.clientrefnom}}</td>
         <td>{{client.clientrefprenom}}</td>
         <td>{{client.clientrefmail}}</td>
         <td>{{client.clientreftel}}</td>
@@ -49,7 +49,7 @@ export default {
       let params = this.$route.params.id;
       ClientService.oneClient(params)
         .then((data) => {
-          this.cliente = data;
+          this.client = data;
           console.log(this.client);
       })
       .catch(error => { console.log(error)});

@@ -43,9 +43,9 @@
         return response.json();
         })
     },
-    editClient(cliententreprise, clientrue, clientville, clientcp, clientrefnom, clientrefprenom, clientrefmail, clientreftel, clientsec) {
+    editClient(id, cliententreprise, clientrue, clientville, clientcp, clientrefnom, clientrefprenom, clientrefmail, clientreftel, clientsec) {
       fetch(myApiUrl + id, {
-        method: 'get',
+        method: 'put',
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'

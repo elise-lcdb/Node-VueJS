@@ -20,13 +20,16 @@
     </thead>
     <tbody>
       <tr v-for="s in client">
-        <td>{{s.nom_entreprise}}</td>
-        <td>{{s.adresse}}</td>
-        <td>{{s.contact_referent}}</td>
-        <td>{{s.secteur_activite}}</td>
-        <td><button>Voir</button></td>
-        <td><button>Modifier</button></td>
-        <td><button>Supprimer</button></td>
+        <td>{{s.cliententreprise}}</td>
+        <td>{{s.clientrue}} {{s.clientville}} {{s.clientcp}}</td>
+        <td>{{s.clientrefnom}} {{s.clientrefprenom}} {{s.clientrefmail}} {{s.clientreftel}}</td>
+        <td>{{s.clientsec}}</td>
+         <td><router-link :to="{ name: 'OneClient', params: {id: s._id } }">Voir</router-link>
+</td>
+       <td><router-link :to="{ name: 'EditClient', params: {id: s._id } }">Modifier</router-link>
+</td>
+        <td><router-link :to="{ name: 'DeleteClient', params: {id: s._id } }">Supprimer</router-link>
+</td>
       </tr>
       
     </tbody>

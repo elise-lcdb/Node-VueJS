@@ -40,7 +40,7 @@
 		    <label for="secteur_activite">Secteur d'activité:</label>
 		    <input type="text" class="form-control" id="secteur_activite" v-model="clientsec">
 		  </div>
-  <router-link to="/client" tag="a">
+  <router-link to="/clients" tag="a">
   <button type="button" name="button" class="btn btn-primary" v-on:click="formData(cliententreprise, clientrue, clientville, clientcp, clientrefnom, clientrefprenom, clientrefmail, clientreftel, clientsec)">Submit</button>
 </router-link>
 	</form>
