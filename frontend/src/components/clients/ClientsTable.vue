@@ -1,11 +1,17 @@
 <template>
 	<div>
+     <br>
+    <h1 style="text-align: center;">Clients</h1>
+    <router-link tag="a" to="/CreateClient" style="float: right;"><button type="button" name="button" class="btn btn-primary">Créer Client</button></router-link>
+    <br>
+    <br>
+    <br>
 		  <table class="table">
     <thead>
       <tr>
         <th>Nom de l'entreprise</th>
         <th>Adresse:Rue + Ville + Code postale</th>
-        <th>Contact référent: nom + prénom + mail+ téléphone</th>
+        <th>Contact référent: nom + prénom + mail + téléphone</th>
         <th>Secteur d'activité</th>
         <th>Tout Voir</th>
         <th>Modifier</th>

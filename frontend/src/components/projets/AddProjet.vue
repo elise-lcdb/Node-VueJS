@@ -1,5 +1,8 @@
 <template>
 	<div>
+		<br>
+		<h1>Créer Projet</h1>
+		<br>
 		<form>
 			<div class="form-group">
 		    	<label for="nom">Nom:</label>
@@ -30,8 +33,8 @@
     			<option value="Prospect">Prospect</option>
   			</select>
 		  </div>
- 
-  <button type="button" name="button" class="btn btn-primary" v-on:click="formData(projetnom, projetdescription, projetdatedebut, projetdatefin, projetmontant, projetstatut)">Submit</button>
+  <router-link to="/projets" tag="a">
+  <button type="button" name="button" class="btn btn-primary" v-on:click="formData(projetnom, projetdescription, projetdatedebut, projetdatefin, projetmontant, projetstatut)">Submit</button></router-link>
 	</form>
 	</div>
 </template>
@@ -51,7 +54,7 @@ export default {
   },
   methods: {
     formData: function (projetnom, projetdescription, projetdatedebut, projetdatefin, projetmontant, projetstatut){
-        ProjetService.createProjet()
+        ProjetService.createProjet(projetnom, projetdescription, projetdatedebut, projetdatefin, projetmontant, projetstatut)
     }
   }
 };

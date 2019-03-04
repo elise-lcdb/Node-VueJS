@@ -1,5 +1,8 @@
 <template>
 	<div>
+		<br>
+		<h1>Créer Client</h1>
+		<br>
 		<form>
 			<div class="form-group">
 		    	<label for="nom_entreprise">Nom de l'entreprise:</label>
@@ -37,9 +40,11 @@
 		    <label for="secteur_activite">Secteur d'activité:</label>
 		    <input type="text" class="form-control" id="secteur_activite" v-model="clientsec">
 		  </div>
- 
+  <router-link to="/client" tag="a">
   <button type="button" name="button" class="btn btn-primary" v-on:click="formData(cliententreprise, clientrue, clientville, clientcp, clientrefnom, clientrefprenom, clientrefmail, clientreftel, clientsec)">Submit</button>
+</router-link>
 	</form>
+	<br>
 	</div>
 </template>
 <script>
@@ -61,7 +66,7 @@ export default {
   },
   methods: {
     formData: function (cliententreprise, clientrue, clientville, clientcp, clientrefnom, clientrefprenom, clientrefmail, clientreftel, clientsec){
-        ClientService.createClient()
+        ClientService.createClient(cliententreprise, clientrue, clientville, clientcp, clientrefnom, clientrefprenom, clientrefmail, clientreftel, clientsec)
     }
   }
 };

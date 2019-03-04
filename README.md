@@ -1,4 +1,4 @@
-# Node-VueJS
+# Node-VueJS by Imen Chebbi and Elise Le Caruyer de Beauvais
 To start the API
 <br>
 cd Server

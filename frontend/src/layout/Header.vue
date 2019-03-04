@@ -10,10 +10,10 @@
       <router-link class="nav-item" tag="a" to="/salarie">Salarié</router-link>
     </li>
     <li class="nav-item">
-      <router-link class="nav-item" tag="a" to="/projet">Projet</router-link>
+      <router-link class="nav-item" tag="a" to="/projets">Projet</router-link>
     </li>
     <li class="nav-item">
-      <router-link class="nav-item" tag="a" to="/client">Client</router-link>
+      <router-link class="nav-item" tag="a" to="/clients">Client</router-link>
     </li>
   </ul>
 </nav>

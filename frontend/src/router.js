@@ -9,7 +9,7 @@ import EditSalarie from './views/Salarie/EditSalarie.vue';
 import DeleteSalarie from './views/Salarie/DeleteSalarie.vue';
 // Projet
 import AllProjets from './views/Projets/AllProjets.vue';
-import CreateProject from './views/Projets/CreateProjet.vue';
+import CreateProjet from './views/Projets/CreateProjet.vue';
 // Clients
 import AllClients from './views/Clients/AllClients.vue';
 import CreateClient from './views/Clients/CreateClient.vue';
@@ -64,6 +64,11 @@ export default new Router({
    path: '/salarie/delete/:id', 
    name: 'DeleteSalarie', 
    component: DeleteSalarie
+  },
+  {
+   path: '/CreateProjet', 
+   name: 'CreateProjet', 
+   component: CreateProjet
   },
 
   ],

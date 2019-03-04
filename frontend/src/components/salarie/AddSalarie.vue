@@ -46,8 +46,11 @@
     			<option value="intégrateur">Intégrateur</option>
   			</select>
 		  </div>
- 
-  <button type="button" name="button" class="btn btn-primary" v-on:click="formData(salarienom, salarieprenom, salarieusername, salarieddn, salarierue, salarieville, salariecp, salarietel, salariemail, salarieposte)">Submit</button>
+ <router-link to="/Salarie" tag="a">
+  <button type="button" name="button" class="btn btn-primary" v-on:click="formData(salarienom, salarieprenom, salarieusername, salarieddn, salarierue, salarieville, salariecp, salarietel, salariemail, salarieposte)">
+  	Submit
+  	</button>
+  	</router-link>
 	</form>
 	</div>
 </template>
@@ -72,7 +75,7 @@ export default {
   },
   methods: {
     formData: function (salarienom, salarieprenom, salarieusername, salarieddn, salarierue, salarieville, salariecp, salarietel, salariemail, salarieposte){
-        SalarieService.createSalarie();   
+        SalarieService.createSalarie(salarienom, salarieprenom, salarieusername, salarieddn, salarierue, salarieville, salariecp, salarietel, salariemail, salarieposte);   
     }
   }
 };

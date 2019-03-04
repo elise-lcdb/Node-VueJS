@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<OneSalarie />
+		<ASalarie />
 	</div>
 </template>
 <script>

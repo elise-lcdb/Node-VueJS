@@ -1,14 +1,14 @@
 <template>
 	<div>
-		<CreateProjet />
+		<AddProjet />
 	</div>
 </template>
 <script>
-import CreateProjet from '@/components/projets/CreateProjet.vue'
+import AddProjet from '@/components/projets/AddProjet.vue'
 
 export default{
 	components: {
-		CreateProjet
+		AddProjet
 	}
 }
 </script>

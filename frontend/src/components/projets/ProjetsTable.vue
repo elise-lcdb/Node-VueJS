@@ -1,5 +1,11 @@
 <template>
 	<div>
+    <br>
+    <h1 style="text-align: center;">Projets</h1>
+    <router-link tag="a" to="/CreateProjet" style="float: right;"><button type="button" name="button" class="btn btn-primary">Créer Projet</button></router-link>
+    <br>
+    <br>
+    <br>
 		  <table class="table">
     <thead>
       <tr>
@@ -12,10 +18,10 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="s in salarie">
-        <td>{{s.nom}}</td>
-        <td>{{s.description}}</td>
-        <td>{{s.statut}}</td>
+      <tr v-for="p in projet">
+        <td>{{p.nom}}</td>
+        <td>{{p.description}}</td>
+        <td>{{p.statut}}</td>
         <td><button>Voir</button></td>
         <td><button>Modifier</button></td>
         <td><button>Supprimer</button></td>
@@ -38,7 +44,7 @@ export default {
   created() {
      ProjetService.getProjet()
       .then((data) => {
-        this.salarie = data;
+        this.projet = data;
         console.log(this.projet);
       })
       .catch(error => { console.log(error)});

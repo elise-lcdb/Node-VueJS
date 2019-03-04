@@ -47,7 +47,7 @@ app.put('/api/v1/client/:id', ClientController.updateClient);
 
 //Projet
 app.post('/api/v1/projet/add', ProjetController.createProjet);
-app.get('/api/v1/projet', ProjetController.allProjet);
+app.get('/api/v1/projet', ProjetController.getProjet);
 app.get('/api/v1/projet/:id', ProjetController.oneProjet);
 app.get('/api/v1/projet/remove/:id', ProjetController.removeProjet);
 app.put('/api/v1/projet/:id', ProjetController.updateProjet);

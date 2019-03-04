@@ -31,9 +31,11 @@
         })
       })
       .then((response) => {
-        console.log(response);
-        return response.json();
-      })
+        console.log(response)
+        return response.json()
+      }).then((data) =>{
+        console.log(data);
+      }).catch( error => {console.log(error);});
     },
     deleteClient(id){
       return fetch(myApiUrlremove + id)
@@ -61,9 +63,11 @@
       })
       })
       .then((response) => {
-        console.log(response);
-        return response.json();
-      })
+        console.log(response)
+        return response.json()
+      }).then((data) =>{
+        console.log(data);
+      }).catch( error => {console.log(error);});
     },
     oneClient(id) {
       return fetch(myApiUrl + id)

@@ -2,8 +2,10 @@
 	<div>
     <br>
     <h1 style="text-align: center;">Salarié</h1>
+    <router-link tag="a" to="/CreateSalarie" style="float: right;"><button type="button" name="button" class="btn btn-primary">Créer Salarié</button></router-link>
     <br>
-    <router-link tag="a" to="/CreateSalarie">Créer Salarié</router-link>
+    <br>
+    <br>
 		  <table class="table">
     <thead>
       <tr>

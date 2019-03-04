@@ -30,7 +30,9 @@
       .then((response) => {
         console.log(response);
         return response.json();
-      })
+      }).then((data) =>{
+        console.log(data);
+      }).catch( error => {console.log(error);});
     },
     deleteProjet(id){
       return fetch(myApiUrlremove + id)
@@ -57,7 +59,9 @@
       .then((response) => {
         console.log(response);
         return response.json();
-      })
+      }).then((data) =>{
+        console.log(data);
+      }).catch( error => {console.log(error);});
     },
     oneProjet(id) {
       return fetch(myApiUrl + id)

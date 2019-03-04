@@ -1,13 +1,13 @@
 <template>
 	<div>
-		<CreateClient />
+		<AddClient />
 	</div>
 </template>
 <script>
-import CreateClient from '@/components/clients/CreateClient.vue'
+import AddClient from '@/components/clients/AddClient.vue'
 export default{
 	components: {
-		CreateClient
+		AddClient
 	}
 }
 </script>

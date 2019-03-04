@@ -23,7 +23,7 @@ exports.createProjet = (req, res) => {
 	})
 }
 
-exports.allProjet = (req, res) => {
+exports.getProjet = (req, res) => {
 	Projet.find((err, projet) => {
 		if(err) {
 			console.log(err);
