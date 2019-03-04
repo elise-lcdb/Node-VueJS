@@ -4,10 +4,10 @@
 	</div>
 </template>
 <script>
-import OneSalarie from '@/components/salarie/OneSalarie.vue'
+import ASalarie from '@/components/salarie/ASalarie.vue'
 export default{
 	components: {
-		OneSalarie
+		ASalarie
 	}
 };
 </script>

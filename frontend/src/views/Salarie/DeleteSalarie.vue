@@ -1,13 +1,13 @@
 <template>
 	<div>
-		<DeleteSalarie />
+		<RemoveSalarie />
 	</div>
 </template>
 <script>
-import DeleteSalarie from '@/components/salarie/DeleteSalarie.vue'
+import RemoveSalarie from '@/components/salarie/RemoveSalarie.vue'
 export default{
 	components: {
-		DeleteSalarie
+		RemoveSalarie
 	}
 };
 </script>

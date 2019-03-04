@@ -21,7 +21,7 @@ exports.createSalarie = (req, res) => {
 		}
 
 		else {
-			console.log("Salarie created");
+			console.log(salarie);
 		}
 		res.send(salarie);
 	})

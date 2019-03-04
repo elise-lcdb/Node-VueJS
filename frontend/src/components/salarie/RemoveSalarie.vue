@@ -9,7 +9,7 @@
 import SalarieService from '../../Service/SalarieService.vue';
 
 export default {
-	name: 'DeleteSalarie',
+	name: 'RemoveSalarie',
 	data() {
    	return{
   	salarie: [],

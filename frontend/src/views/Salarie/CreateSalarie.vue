@@ -1,13 +1,13 @@
 <template>
-	<CreateSalarie />
+	<AddSalarie />
 </template>
 <script>
-import CreateSalarie from '@/components/salarie/CreateSalarie.vue';
+import AddSalarie from '@/components/salarie/AddSalarie.vue';
 
 export default {
 	name: 'CreateSalarie',
 	components: {
-		CreateSalarie,
+		AddSalarie,
 	}
 }
 </script>

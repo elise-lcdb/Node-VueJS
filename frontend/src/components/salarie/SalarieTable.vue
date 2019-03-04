@@ -3,6 +3,7 @@
     <br>
     <h1 style="text-align: center;">Salarié</h1>
     <br>
+    <router-link tag="a" to="/CreateSalarie">Créer Salarié</router-link>
 		  <table class="table">
     <thead>
       <tr>

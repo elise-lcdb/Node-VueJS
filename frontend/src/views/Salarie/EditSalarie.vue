@@ -1,13 +1,13 @@
 <template>
 	<div>
-		<EditSalarie />
+		<ModifySalarie />
 	</div>
 </template>
 <script>
-import EditSalarie from '@/components/salarie/EditSalarie.vue'
+import ModifySalarie from '@/components/salarie/ModifySalarie.vue'
 export default{
 	components: {
-		EditSalarie
+		ModifySalarie
 	}
 };
 </script>
